@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina Velas — Velas Artesanales Aromáticas</title>
+    <title>Shaill Velas — Cera de Soya Aromática</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <i class="fas fa-fire"></i>
-                <span>Lumina</span>
+                <img src="images/logo.jpg" alt="Shaill Velas" class="logo-img">
+                <span>Shaill</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Inicio</a></li>
@@ -34,26 +33,21 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">Velas Artesanales</p>
-            <h1 class="hero-title">Ilumina tus momentos<br>con esencia natural</h1>
-            <p class="hero-desc">Cada vela está hecha a mano con cera de soya 100% natural, aceites esenciales puros y mucho amor.</p>
+            <p class="hero-subtitle">Cera de Soya Aromática</p>
+            <h1 class="hero-title">Que cada llama ilumine tu calma</h1>
+            <p class="hero-desc">Ceras de soya 100% naturales en formas únicas. Hechas con amor para tu bienestar y armonía en cada detalle.</p>
             <div class="hero-buttons">
                 <a href="tienda.html" class="btn btn-primary">Ver Colección</a>
                 <a href="nosotros.html" class="btn btn-outline">Conócenos</a>
             </div>
         </div>
         <div class="hero-image">
-            <div class="hero-img-placeholder">
-                <i class="fas fa-candle-holder"></i>
-                <span>Vela Destacada</span>
-            </div>
+            <img src="images/vela1.jpg" alt="Quemador de cera Shaill Velas" class="hero-img">
         </div>
     </section>
 
-    <!-- Features -->
     <section class="features">
         <div class="container">
             <div class="features-grid">
@@ -81,47 +75,37 @@
         </div>
     </section>
 
-    <!-- Productos Destacados -->
     <section class="products-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Más Vendidas</h2>
                 <p class="section-subtitle">Las favoritas de nuestros clientes</p>
             </div>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Se llena con JS -->
-            </div>
+            <div class="products-grid" id="featuredProducts"></div>
             <div class="text-center">
                 <a href="tienda.html" class="btn btn-primary">Ver Todos los Productos</a>
             </div>
         </div>
     </section>
 
-    <!-- Categorías -->
     <section class="categories-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Nuestras Colecciones</h2>
             </div>
             <div class="categories-grid">
-                <a href="tienda.html?categoria=aromaticas" class="category-card">
-                    <div class="category-img">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Aromáticas</h3>
-                    <p>Lavanda, vainilla, cítricos y más</p>
+                <a href="tienda.html?categoria=ceras" class="category-card">
+                    <div class="category-img"><i class="fas fa-heart"></i></div>
+                    <h3>Ceras de Soya</h3>
+                    <p>Corazones, flores y más formas</p>
                 </a>
-                <a href="tienda.html?categoria=decorativas" class="category-card">
-                    <div class="category-img">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Decorativas</h3>
-                    <p>Velas esculpidas y diseño único</p>
+                <a href="tienda.html?categoria=quemadores" class="category-card">
+                    <div class="category-img"><i class="fas fa-fire"></i></div>
+                    <h3>Quemadores</h3>
+                    <p>Cerámica elegante para tu hogar</p>
                 </a>
                 <a href="tienda.html?categoria=sets" class="category-card">
-                    <div class="category-img">
-                        <i class="fas fa-box-open"></i>
-                    </div>
+                    <div class="category-img"><i class="fas fa-box-open"></i></div>
                     <h3>Sets y Regalos</h3>
                     <p>El detalle perfecto para cualquier ocasión</p>
                 </a>
@@ -129,7 +113,6 @@
         </div>
     </section>
 
-    <!-- Testimonios -->
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
@@ -140,7 +123,7 @@
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"La vela de lavanda es mágica. El aroma dura horas y la cera de soya no deja residuos. ¡Ya compré 3!"</p>
+                    <p>"Las ceras de soya de Shaill huelen increíble. El aroma de vainilla llena toda mi habitación. ¡Ya pedí el pack completo!"</p>
                     <div class="testimonial-author">
                         <strong>María G.</strong>
                         <span>Cliente verificada</span>
@@ -150,7 +133,7 @@
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"Regalé el set de velas a mi mamá y quedó encantada. El empaque es hermoso y el aroma es súper natural."</p>
+                    <p>"Regalé el set con quemador a mi mamá y quedó encantada. El empaque es hermoso y el quemador de cerámica es divino."</p>
                     <div class="testimonial-author">
                         <strong>Carlos R.</strong>
                         <span>Cliente verificado</span>
@@ -160,7 +143,7 @@
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"Me encanta que sean eco-friendly. La vela de vainilla huele delicioso y dura mucho más que las comerciales."</p>
+                    <p>"Me encanta que sean de soya natural. La lavanda es mi favorita, relaja muchísimo después de un día largo."</p>
                     <div class="testimonial-author">
                         <strong>Ana L.</strong>
                         <span>Cliente verificada</span>
@@ -170,11 +153,10 @@
         </div>
     </section>
 
-    <!-- Newsletter -->
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
-                <h2>Únete a la familia Lumina</h2>
+                <h2>Únete a la familia Shaill</h2>
                 <p>Recibe un 10% de descuento en tu primera compra y sé el primero en conocer nuevas colecciones.</p>
                 <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte! Revisa tu correo.');">
                     <input type="email" placeholder="Tu correo electrónico" required>
@@ -184,16 +166,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <i class="fas fa-fire"></i>
-                        <span>Lumina</span>
+                        <img src="images/logo.jpg" alt="Shaill Velas" class="logo-img">
+                        <span>Shaill</span>
                     </a>
-                    <p>Velas artesanales hechas con amor y materiales 100% naturales.</p>
+                    <p>Ceras de soya aromáticas hechas con amor y materiales 100% naturales.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -205,8 +186,8 @@
                     <h4>Tienda</h4>
                     <ul>
                         <li><a href="tienda.html">Todos los productos</a></li>
-                        <li><a href="tienda.html?categoria=aromaticas">Aromáticas</a></li>
-                        <li><a href="tienda.html?categoria=decorativas">Decorativas</a></li>
+                        <li><a href="tienda.html?categoria=ceras">Ceras de Soya</a></li>
+                        <li><a href="tienda.html?categoria=quemadores">Quemadores</a></li>
                         <li><a href="tienda.html?categoria=sets">Sets de regalo</a></li>
                     </ul>
                 </div>
@@ -222,14 +203,14 @@
                 <div class="footer-links">
                     <h4>Contacto</h4>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> hola@luminavelas.com</li>
+                        <li><i class="fas fa-envelope"></i> hola@shaillvelas.com</li>
                         <li><i class="fas fa-phone"></i> +52 55 1234 5678</li>
                         <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, MX</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Lumina Velas. Todos los derechos reservados.</p>
+                <p>© 2026 Shaill Velas. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

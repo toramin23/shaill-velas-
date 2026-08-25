@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto — Lumina Velas</title>
+    <title>Contacto — Shaill Velas</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,8 +12,8 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <i class="fas fa-fire"></i>
-                <span>Lumina</span>
+                <img src="images/logo.jpg" alt="Shaill Velas" class="logo-img">
+                <span>Shaill</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
@@ -26,9 +26,7 @@
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </a>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </nav>
@@ -45,39 +43,25 @@
             <div class="contact-layout">
                 <div class="contact-info">
                     <h2>Hablemos</h2>
-                    <p>¿Tienes preguntas sobre nuestros productos, envíos o quieres una vela personalizada? Escríbenos, te respondemos en menos de 24 horas.</p>
-
+                    <p>¿Tienes preguntas sobre nuestros productos, envíos o quieres un pedido personalizado? Escríbenos, te respondemos en menos de 24 horas.</p>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Correo electrónico</strong>
-                                <p>hola@luminavelas.com</p>
-                            </div>
+                            <div><strong>Correo electrónico</strong><p>hola@shaillvelas.com</p></div>
                         </div>
                         <div class="contact-method">
                             <i class="fab fa-whatsapp"></i>
-                            <div>
-                                <strong>WhatsApp</strong>
-                                <p>+52 55 1234 5678</p>
-                            </div>
+                            <div><strong>WhatsApp</strong><p>+52 55 1234 5678</p></div>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Ubicación</strong>
-                                <p>Ciudad de México, México</p>
-                            </div>
+                            <div><strong>Ubicación</strong><p>Ciudad de México, México</p></div>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Horario de atención</strong>
-                                <p>Lun - Vie: 9:00 - 18:00<br>Sáb: 10:00 - 14:00</p>
-                            </div>
+                            <div><strong>Horario de atención</strong><p>Lun - Vie: 9:00 - 18:00<br>Sáb: 10:00 - 14:00</p></div>
                         </div>
                     </div>
-
                     <div class="social-contact">
                         <p>Síguenos en redes</p>
                         <div class="social-links">
@@ -91,14 +75,8 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Mensaje enviado! Te contactaremos pronto.');">
                         <div class="form-row">
-                            <div class="form-group">
-                                <label>Nombre *</label>
-                                <input type="text" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Correo *</label>
-                                <input type="email" required>
-                            </div>
+                            <div class="form-group"><label>Nombre *</label><input type="text" required></div>
+                            <div class="form-group"><label>Correo *</label><input type="email" required></div>
                         </div>
                         <div class="form-group">
                             <label>Asunto</label>
@@ -106,7 +84,6 @@
                                 <option>Consulta general</option>
                                 <option>Pedido personalizado</option>
                                 <option>Envíos y entregas</option>
-                                <option>Devoluciones</option>
                                 <option>Mayoreo</option>
                             </select>
                         </div>
@@ -123,57 +100,35 @@
 
     <section class="faq-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Preguntas Frecuentes</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">Preguntas Frecuentes</h2></div>
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Cuánto duran las velas?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>¿Cuánto duran las ceras de soya?</span><i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer">
-                        <p>Nuestras velas de 200g duran aproximadamente 40-45 horas de combustión. Las de 350g duran entre 60-70 horas. Siempre recomendamos dejar la vela encendida al menos 2 horas para que la cera se derrita de forma uniforme.</p>
-                    </div>
+                    <div class="faq-answer"><p>Nuestras ceras individuales duran aproximadamente 4-6 horas de aroma continuo. Las barras duran entre 8-10 horas.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Hacen envíos internacionales?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>¿Hacen envíos internacionales?</span><i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer">
-                        <p>Actualmente realizamos envíos a todo México. Para envíos internacionales, contáctanos directamente por WhatsApp o correo para cotizar el envío a tu país.</p>
-                    </div>
+                    <div class="faq-answer"><p>Actualmente realizamos envíos a todo México. Para envíos internacionales, contáctanos directamente por WhatsApp.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Puedo personalizar una vela?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>¿Puedo personalizar un pedido?</span><i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer">
-                        <p>¡Sí! Ofrecemos velas personalizadas para eventos, bodas, corporativos o regalos. Puedes elegir el aroma, el color, la etiqueta e incluso el mensaje. Escríbenos con tu idea.</p>
-                    </div>
+                    <div class="faq-answer"><p>¡Sí! Ofrecemos pedidos personalizados para eventos, bodas, corporativos o regalos. Escríbenos con tu idea.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>¿Cuánto tarda en llegar mi pedido?</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span>¿Cuánto tarda en llegar mi pedido?</span><i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="faq-answer">
-                        <p>Los pedidos se preparan en 1-2 días hábiles. El tiempo de envío depende de tu ubicación: CDMX 1-2 días, zonas metropolitanas 2-3 días, resto del país 3-5 días hábiles.</p>
-                    </div>
+                    <div class="faq-answer"><p>Los pedidos se preparan en 1-2 días hábiles. CDMX 1-2 días, zonas metropolitanas 2-3 días, resto del país 3-5 días hábiles.</p></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>© 2026 Lumina Velas. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="js/main.js"></script>
 </body>

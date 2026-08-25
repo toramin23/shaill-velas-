@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar Compra — Lumina Velas</title>
+    <title>Finalizar Compra — Shaill Velas</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,8 +12,8 @@
     <nav class="navbar navbar-simple">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <i class="fas fa-fire"></i>
-                <span>Lumina</span>
+                <img src="images/logo.jpg" alt="Shaill Velas" class="logo-img">
+                <span>Shaill</span>
             </a>
             <a href="carrito.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver al carrito</a>
         </div>
@@ -26,47 +26,22 @@
                     <div class="checkout-step">
                         <h2><span class="step-num">1</span> Información de Contacto</h2>
                         <div class="form-row">
-                            <div class="form-group">
-                                <label>Nombre *</label>
-                                <input type="text" id="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Apellido *</label>
-                                <input type="text" id="lastName" required>
-                            </div>
+                            <div class="form-group"><label>Nombre *</label><input type="text" id="firstName" required></div>
+                            <div class="form-group"><label>Apellido *</label><input type="text" id="lastName" required></div>
                         </div>
-                        <div class="form-group">
-                            <label>Correo electrónico *</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Teléfono *</label>
-                            <input type="tel" id="phone" required>
-                        </div>
+                        <div class="form-group"><label>Correo electrónico *</label><input type="email" id="email" required></div>
+                        <div class="form-group"><label>Teléfono *</label><input type="tel" id="phone" required></div>
                     </div>
 
                     <div class="checkout-step">
                         <h2><span class="step-num">2</span> Dirección de Envío</h2>
-                        <div class="form-group">
-                            <label>Dirección *</label>
-                            <input type="text" id="address" required>
-                        </div>
+                        <div class="form-group"><label>Dirección *</label><input type="text" id="address" required></div>
                         <div class="form-row">
-                            <div class="form-group">
-                                <label>Ciudad *</label>
-                                <input type="text" id="city" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Código Postal *</label>
-                                <input type="text" id="zip" required>
-                            </div>
+                            <div class="form-group"><label>Ciudad *</label><input type="text" id="city" required></div>
+                            <div class="form-group"><label>Código Postal *</label><input type="text" id="zip" required></div>
                         </div>
-                        <div class="form-group">
-                            <label>Estado / Provincia *</label>
-                            <input type="text" id="state" required>
-                        </div>
-                        <div class="form-group">
-                            <label>País *</label>
+                        <div class="form-group"><label>Estado / Provincia *</label><input type="text" id="state" required></div>
+                        <div class="form-group"><label>País *</label>
                             <select id="country">
                                 <option value="MX">México</option>
                                 <option value="CO">Colombia</option>
@@ -77,8 +52,7 @@
                                 <option value="other">Otro</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Notas adicionales (opcional)</label>
+                        <div class="form-group"><label>Notas adicionales (opcional)</label>
                             <textarea id="notes" rows="3" placeholder="Instrucciones de entrega, referencias, etc."></textarea>
                         </div>
                     </div>
@@ -90,40 +64,28 @@
                                 <input type="radio" name="payment" value="transfer" checked>
                                 <div class="payment-content">
                                     <i class="fas fa-university"></i>
-                                    <div>
-                                        <strong>Transferencia Bancaria</strong>
-                                        <p>Te enviaremos los datos bancarios por correo</p>
-                                    </div>
+                                    <div><strong>Transferencia Bancaria</strong><p>Te enviaremos los datos bancarios por correo</p></div>
                                 </div>
                             </label>
                             <label class="payment-option">
                                 <input type="radio" name="payment" value="mercado">
                                 <div class="payment-content">
                                     <i class="fas fa-credit-card"></i>
-                                    <div>
-                                        <strong>Mercado Pago</strong>
-                                        <p>Tarjeta de crédito, débito o efectivo</p>
-                                    </div>
+                                    <div><strong>Mercado Pago</strong><p>Tarjeta de crédito, débito o efectivo</p></div>
                                 </div>
                             </label>
                             <label class="payment-option">
                                 <input type="radio" name="payment" value="paypal">
                                 <div class="payment-content">
                                     <i class="fab fa-paypal"></i>
-                                    <div>
-                                        <strong>PayPal</strong>
-                                        <p>Pago seguro internacional</p>
-                                    </div>
+                                    <div><strong>PayPal</strong><p>Pago seguro internacional</p></div>
                                 </div>
                             </label>
                             <label class="payment-option">
                                 <input type="radio" name="payment" value="cash">
                                 <div class="payment-content">
                                     <i class="fas fa-hand-holding-usd"></i>
-                                    <div>
-                                        <strong>Efectivo / Contra Entrega</strong>
-                                        <p>Paga al recibir tu pedido (solo CDMX)</p>
-                                    </div>
+                                    <div><strong>Efectivo / Contra Entrega</strong><p>Paga al recibir tu pedido</p></div>
                                 </div>
                             </label>
                         </div>
@@ -136,36 +98,22 @@
 
                 <div class="checkout-summary">
                     <h3>Tu Pedido</h3>
-                    <div class="checkout-items" id="checkoutItems">
-                        <!-- Se llena con JS -->
-                    </div>
+                    <div class="checkout-items" id="checkoutItems"></div>
                     <div class="summary-divider"></div>
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span id="checkoutSubtotal">$0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Envío</span>
-                        <span id="checkoutShipping">$0.00</span>
-                    </div>
-                    <div class="summary-row total">
-                        <span>Total</span>
-                        <span id="checkoutTotal">$0.00</span>
-                    </div>
+                    <div class="summary-row"><span>Subtotal</span><span id="checkoutSubtotal">$0.00</span></div>
+                    <div class="summary-row"><span>Envío</span><span id="checkoutShipping">$0.00</span></div>
+                    <div class="summary-row total"><span>Total</span><span id="checkoutTotal">$0.00</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal de confirmación -->
     <div class="modal" id="orderModal">
         <div class="modal-content">
-            <div class="modal-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
+            <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
             <h2>¡Pedido Confirmado!</h2>
-            <p>Gracias por tu compra. Hemos enviado un correo con los detalles de tu pedido.</p>
-            <p class="order-number">Número de pedido: <strong id="orderNumber">#LV-0001</strong></p>
+            <p>Gracias por tu compra. Hemos enviado un correo con los detalles.</p>
+            <p class="order-number">Número de pedido: <strong id="orderNumber">#SH-0001</strong></p>
             <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
         </div>
     </div>

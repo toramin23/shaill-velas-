@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito — Lumina Velas</title>
+    <title>Carrito — Shaill Velas</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,8 +12,8 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <i class="fas fa-fire"></i>
-                <span>Lumina</span>
+                <img src="images/logo.jpg" alt="Shaill Velas" class="logo-img">
+                <span>Shaill</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
@@ -26,9 +26,7 @@
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </a>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </nav>
@@ -43,27 +41,15 @@
     <section class="cart-section">
         <div class="container">
             <div class="cart-layout" id="cartLayout">
-                <div class="cart-items" id="cartItems">
-                    <!-- Se llena con JS -->
-                </div>
+                <div class="cart-items" id="cartItems"></div>
                 <div class="cart-summary">
                     <h3>Resumen del Pedido</h3>
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span id="subtotal">$0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Envío</span>
-                        <span id="shipping">Calculado al finalizar</span>
-                    </div>
+                    <div class="summary-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+                    <div class="summary-row"><span>Envío</span><span id="shipping">Calculado al finalizar</span></div>
                     <div class="summary-row discount" id="discountRow" style="display:none;">
-                        <span>Descuento</span>
-                        <span id="discount">-$0.00</span>
+                        <span>Descuento</span><span id="discount">-$0.00</span>
                     </div>
-                    <div class="summary-row total">
-                        <span>Total</span>
-                        <span id="total">$0.00</span>
-                    </div>
+                    <div class="summary-row total"><span>Total</span><span id="total">$0.00</span></div>
                     <div class="coupon-section">
                         <input type="text" id="couponInput" placeholder="Código de descuento">
                         <button onclick="applyCoupon()">Aplicar</button>
@@ -75,19 +61,11 @@
             <div class="cart-empty" id="cartEmpty" style="display:none;">
                 <i class="fas fa-shopping-bag"></i>
                 <h2>Tu carrito está vacío</h2>
-                <p>¡Descubre nuestras velas y encuentra tu aroma favorito!</p>
+                <p>¡Descubre nuestras ceras de soya y encuentra tu aroma favorito!</p>
                 <a href="tienda.html" class="btn btn-primary">Ir a la Tienda</a>
             </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>© 2026 Lumina Velas. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="js/main.js"></script>
 </body>

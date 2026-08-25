@@ -1,162 +1,178 @@
 // ===== DATA =====
-const products = [
+// Intenta cargar productos desde localStorage (admin), si no, usa los por defecto
+const defaultProducts = [
     {
         id: 1,
-        name: "Vela de Lavanda",
-        category: "aromaticas",
-        aroma: "lavanda",
-        price: 280,
-        oldPrice: 350,
-        description: "Relajación profunda con lavanda francesa",
-        size: "200g",
-        burnTime: "45 horas",
+        name: "Cera de Soya Aromática – Corazón",
+        category: "ceras",
+        aroma: "vainilla",
+        price: 45,
+        oldPrice: null,
+        description: "Cera de soya en forma de corazón, aroma vainilla",
+        size: "Individual",
+        burnTime: "4-6 horas",
         featured: true,
-        badge: "Más Vendida"
+        badge: "Más Vendida",
+        image: "images/vela4.jpg"
     },
     {
         id: 2,
-        name: "Vela de Vainilla",
-        category: "aromaticas",
-        aroma: "vainilla",
-        price: 280,
+        name: "Cera de Soya Aromática – Flor",
+        category: "ceras",
+        aroma: "lavanda",
+        price: 45,
         oldPrice: null,
-        description: "Dulce y reconfortante, como un abrazo",
-        size: "200g",
-        burnTime: "45 horas",
+        description: "Cera de soya en forma de flor, aroma lavanda",
+        size: "Individual",
+        burnTime: "4-6 horas",
         featured: true,
-        badge: null
+        badge: null,
+        image: "images/vela4.jpg"
     },
     {
         id: 3,
-        name: "Vela Cítrica de Naranja",
-        category: "aromaticas",
-        aroma: "citrico",
-        price: 260,
-        oldPrice: null,
-        description: "Energía fresca de cítricos naturales",
-        size: "200g",
-        burnTime: "42 horas",
+        name: "Pack 6 Ceras de Soya – Corazones",
+        category: "sets",
+        aroma: "vainilla",
+        price: 220,
+        oldPrice: 270,
+        description: "6 ceras de soya en forma de corazón rojo",
+        size: "6 piezas",
+        burnTime: "4-6 horas c/u",
         featured: true,
-        badge: "Nueva"
+        badge: "Pack",
+        image: "images/vela4.jpg"
     },
     {
         id: 4,
-        name: "Vela de Sándalo",
-        category: "aromaticas",
-        aroma: "amaderado",
-        price: 320,
-        oldPrice: null,
-        description: "Calidez amaderada para momentos íntimos",
-        size: "200g",
-        burnTime: "48 horas",
-        featured: false,
-        badge: null
+        name: "Pack 6 Ceras de Soya – Flores",
+        category: "sets",
+        aroma: "lavanda",
+        price: 220,
+        oldPrice: 270,
+        description: "6 ceras de soya en forma de flor rosa",
+        size: "6 piezas",
+        burnTime: "4-6 horas c/u",
+        featured: true,
+        badge: "Pack",
+        image: "images/vela4.jpg"
     },
     {
         id: 5,
-        name: "Vela de Jazmín",
-        category: "aromaticas",
-        aroma: "floral",
-        price: 300,
+        name: "Quemador de Cera Cerámica",
+        category: "quemadores",
+        aroma: "sin aroma",
+        price: 280,
         oldPrice: null,
-        description: "Elegancia floral que ilumina cualquier espacio",
-        size: "200g",
-        burnTime: "45 horas",
-        featured: false,
-        badge: null
+        description: "Quemador de cerámica blanca para cera de soya",
+        size: "Mediano",
+        burnTime: "Reutilizable",
+        featured: true,
+        badge: "Nuevo",
+        image: "images/vela1.jpg"
     },
     {
         id: 6,
-        name: "Vela Esculpida Rosa",
-        category: "decorativas",
-        aroma: "floral",
-        price: 450,
-        oldPrice: 550,
-        description: "Arte en cera, una rosa que nunca marchita",
-        size: "350g",
-        burnTime: "60 horas",
+        name: "Quemador de Cera con Vela Tealight",
+        category: "quemadores",
+        aroma: "sin aroma",
+        price: 320,
+        oldPrice: null,
+        description: "Quemador de cerámica con vela tealight incluida",
+        size: "Mediano",
+        burnTime: "Reutilizable",
         featured: true,
-        badge: "Edición Limitada"
+        badge: "Combo",
+        image: "images/vela3.jpg"
     },
     {
         id: 7,
-        name: "Vela Geométrica Dorada",
-        category: "decorativas",
-        aroma: "amaderado",
-        price: 380,
+        name: "Cera de Soya en Barra – Vainilla",
+        category: "ceras",
+        aroma: "vainilla",
+        price: 85,
         oldPrice: null,
-        description: "Diseño moderno que complementa cualquier decoración",
-        size: "300g",
-        burnTime: "55 horas",
+        description: "Barra de cera de soya aromática sabor vainilla",
+        size: "Barra",
+        burnTime: "8-10 horas",
         featured: false,
-        badge: null
+        badge: null,
+        image: "images/vela2.jpg"
     },
     {
         id: 8,
-        name: "Set de 3 Velas Mini",
-        category: "sets",
-        aroma: "varios",
-        price: 520,
-        oldPrice: 650,
-        description: "Lavanda, vainilla y cítrico en presentación de regalo",
-        size: "3 x 80g",
-        burnTime: "20 horas c/u",
-        featured: true,
-        badge: "Ideal para Regalo"
+        name: "Cera de Soya en Barra – Lavanda",
+        category: "ceras",
+        aroma: "lavanda",
+        price: 85,
+        oldPrice: null,
+        description: "Barra de cera de soya aromática sabor lavanda",
+        size: "Barra",
+        burnTime: "8-10 horas",
+        featured: false,
+        badge: null,
+        image: "images/vela2.jpg"
     },
     {
         id: 9,
-        name: "Set Spa en Casa",
+        name: "Set Completo – Quemador + Ceras",
         category: "sets",
-        aroma: "lavanda",
-        price: 680,
-        oldPrice: null,
-        description: "Vela grande + 2 velas mini + matches artesanales",
+        aroma: "varios",
+        price: 450,
+        oldPrice: 520,
+        description: "Quemador de cerámica + 12 ceras de soya surtidas",
         size: "Combo",
         burnTime: "Varios",
-        featured: false,
-        badge: null
+        featured: true,
+        badge: "Ideal para Regalo",
+        image: "images/vela3.jpg"
     },
     {
         id: 10,
-        name: "Vela de Eucalipto",
-        category: "aromaticas",
-        aroma: "citrico",
-        price: 290,
+        name: "Set Romántico – Corazones Rojos",
+        category: "sets",
+        aroma: "vainilla",
+        price: 180,
         oldPrice: null,
-        description: "Frescura purificante para tu espacio de trabajo",
-        size: "200g",
-        burnTime: "45 horas",
+        description: "Pack de 4 corazones rojos de cera de soya + quemador mini",
+        size: "Combo",
+        burnTime: "4-6 horas c/u",
         featured: false,
-        badge: null
+        badge: null,
+        image: "images/vela4.jpg"
     },
     {
         id: 11,
-        name: "Vela Bubble Pink",
-        category: "decorativas",
-        aroma: "floral",
-        price: 420,
+        name: "Vela Tealight Aromática",
+        category: "velas",
+        aroma: "vainilla",
+        price: 25,
         oldPrice: null,
-        description: "Forma única de burbuja en tono rosa suave",
-        size: "320g",
-        burnTime: "58 horas",
+        description: "Vela tealight aromática para quemador",
+        size: "Individual",
+        burnTime: "3-4 horas",
         featured: false,
-        badge: null
+        badge: null,
+        image: "images/vela3.jpg"
     },
     {
         id: 12,
-        name: "Set Bienvenida",
+        name: "Set Bienvenida Shaill",
         category: "sets",
         aroma: "varios",
-        price: 890,
-        oldPrice: 1100,
-        description: "4 velas medianas + portavelas de cerámica",
-        size: "Combo",
+        price: 580,
+        oldPrice: 680,
+        description: "Quemador grande + 24 ceras surtidas + vela tealight",
+        size: "Combo Premium",
         burnTime: "Varios",
         featured: false,
-        badge: "Más Completo"
+        badge: "Más Completo",
+        image: "images/vela1.jpg"
     }
 ];
+
+// Cargar productos: localStorage tiene prioridad sobre default
+let products = JSON.parse(localStorage.getItem('shaill_products')) || defaultProducts;
 
 const aromaIcons = {
     lavanda: "fa-spa",
@@ -164,7 +180,8 @@ const aromaIcons = {
     citrico: "fa-lemon",
     amaderado: "fa-tree",
     floral: "fa-flower",
-    varios: "fa-gift"
+    varios: "fa-gift",
+    "sin aroma": "fa-fire"
 };
 
 const aromaLabels = {
@@ -173,21 +190,23 @@ const aromaLabels = {
     citrico: "Cítricos",
     amaderado: "Amaderado",
     floral: "Floral",
-    varios: "Varios aromas"
+    varios: "Varios aromas",
+    "sin aroma": "Sin aroma"
 };
 
 const categoryLabels = {
-    aromaticas: "Aromática",
-    decorativas: "Decorativa",
-    sets: "Set de Regalo"
+    ceras: "Cera de Soya",
+    quemadores: "Quemador",
+    sets: "Set de Regalo",
+    velas: "Vela"
 };
 
 // ===== CART =====
-let cart = JSON.parse(localStorage.getItem('lumina_cart')) || [];
-let appliedCoupon = localStorage.getItem('lumina_coupon') || null;
+let cart = JSON.parse(localStorage.getItem('shaill_cart')) || [];
+let appliedCoupon = localStorage.getItem('shaill_coupon') || null;
 
 function saveCart() {
-    localStorage.setItem('lumina_cart', JSON.stringify(cart));
+    localStorage.setItem('shaill_cart', JSON.stringify(cart));
     updateCartCount();
 }
 
@@ -238,7 +257,7 @@ function getShippingCost() {
 }
 
 function getDiscount() {
-    if (appliedCoupon === 'LUMINA10') return getCartTotal() * 0.10;
+    if (appliedCoupon === 'SHAILL10') return getCartTotal() * 0.10;
     if (appliedCoupon === 'BIENVENIDA') return getCartTotal() * 0.15;
     return 0;
 }
@@ -250,9 +269,9 @@ function getFinalTotal() {
 function applyCoupon() {
     const input = document.getElementById('couponInput');
     const code = input.value.trim().toUpperCase();
-    if (code === 'LUMINA10' || code === 'BIENVENIDA') {
+    if (code === 'SHAILL10' || code === 'BIENVENIDA') {
         appliedCoupon = code;
-        localStorage.setItem('lumina_coupon', code);
+        localStorage.setItem('shaill_coupon', code);
         renderCart();
         showNotification('¡Cupón aplicado!');
     } else {
@@ -290,13 +309,15 @@ function createProductCard(product) {
     const iconClass = aromaIcons[product.aroma] || 'fa-fire';
     const aromaLabel = aromaLabels[product.aroma] || product.aroma;
     const catLabel = categoryLabels[product.category] || product.category;
+    const imgHtml = product.image 
+        ? `<img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.parentElement.innerHTML='<i class=\'fas fa-fire\'></i><span>${product.name}</span>'">`
+        : `<i class="fas ${iconClass}"></i><span>${product.name}</span>`;
 
     return `
         <div class="product-card">
             ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
             <div class="product-img">
-                <i class="fas ${iconClass}"></i>
-                <span>${product.name}</span>
+                ${imgHtml}
                 <div class="product-actions">
                     <button onclick="addToCart(${product.id})" title="Agregar al carrito">
                         <i class="fas fa-shopping-bag"></i>
@@ -334,13 +355,11 @@ function renderShop() {
     const container = document.getElementById('shopProducts');
     if (!container) return;
 
-    // Get filter values
     const catFilters = Array.from(document.querySelectorAll('.filter-cat:checked')).map(cb => cb.value);
     const aromaFilters = Array.from(document.querySelectorAll('.filter-aroma:checked')).map(cb => cb.value);
     const maxPrice = document.getElementById('priceRange') ? parseInt(document.getElementById('priceRange').value) : 1000;
     const sortValue = document.getElementById('sortSelect') ? document.getElementById('sortSelect').value : 'default';
 
-    // URL category param
     const urlParams = new URLSearchParams(window.location.search);
     const urlCategory = urlParams.get('categoria');
     if (urlCategory && !catFilters.includes(urlCategory)) {
@@ -350,7 +369,6 @@ function renderShop() {
         });
     }
 
-    // Filter
     let filtered = products.filter(p => {
         const catMatch = catFilters.includes(p.category);
         const aromaMatch = aromaFilters.includes(p.aroma);
@@ -358,12 +376,10 @@ function renderShop() {
         return catMatch && aromaMatch && priceMatch;
     });
 
-    // Sort
     if (sortValue === 'price-asc') filtered.sort((a, b) => a.price - b.price);
     else if (sortValue === 'price-desc') filtered.sort((a, b) => b.price - a.price);
     else if (sortValue === 'name') filtered.sort((a, b) => a.name.localeCompare(b.name));
 
-    // Render
     container.innerHTML = filtered.map(createProductCard).join('');
 
     const countEl = document.getElementById('resultsCount');
@@ -390,13 +406,13 @@ function renderCart() {
     itemsContainer.innerHTML = cart.map(item => {
         const product = products.find(p => p.id === item.id);
         if (!product) return '';
-        const iconClass = aromaIcons[product.aroma] || 'fa-fire';
+        const imgHtml = product.image 
+            ? `<img src="${product.image}" alt="${product.name}" onerror="this.parentElement.innerHTML='<i class=\'fas fa-fire\'></i>'">`
+            : `<i class="fas fa-fire"></i>`;
 
         return `
             <div class="cart-item">
-                <div class="cart-item-img">
-                    <i class="fas ${iconClass}"></i>
-                </div>
+                <div class="cart-item-img">${imgHtml}</div>
                 <div class="cart-item-details">
                     <h3>${product.name}</h3>
                     <p>${aromaLabels[product.aroma]} · ${product.size}</p>
@@ -416,7 +432,6 @@ function renderCart() {
         `;
     }).join('');
 
-    // Update summary
     const subtotal = getCartTotal();
     const shipping = getShippingCost();
     const discount = getDiscount();
@@ -448,13 +463,13 @@ function renderCheckout() {
     itemsContainer.innerHTML = cart.map(item => {
         const product = products.find(p => p.id === item.id);
         if (!product) return '';
-        const iconClass = aromaIcons[product.aroma] || 'fa-fire';
+        const imgHtml = product.image 
+            ? `<img src="${product.image}" alt="${product.name}" onerror="this.parentElement.innerHTML='<i class=\'fas fa-fire\'></i>'">`
+            : `<i class="fas fa-fire"></i>`;
 
         return `
             <div class="checkout-item">
-                <div class="checkout-item-img">
-                    <i class="fas ${iconClass}"></i>
-                </div>
+                <div class="checkout-item-img">${imgHtml}</div>
                 <div class="checkout-item-info">
                     <h4>${product.name}</h4>
                     <p>Cantidad: ${item.qty}</p>
@@ -500,18 +515,15 @@ function placeOrder() {
         return;
     }
 
-    // Generate order number
-    const orderNum = '#LV-' + Math.floor(1000 + Math.random() * 9000);
+    const orderNum = '#SH-' + Math.floor(1000 + Math.random() * 9000);
     document.getElementById('orderNumber').textContent = orderNum;
 
-    // Show modal
     document.getElementById('orderModal').classList.add('active');
 
-    // Clear cart
     cart = [];
     appliedCoupon = null;
-    localStorage.removeItem('lumina_cart');
-    localStorage.removeItem('lumina_coupon');
+    localStorage.removeItem('shaill_cart');
+    localStorage.removeItem('shaill_coupon');
     updateCartCount();
 }
 

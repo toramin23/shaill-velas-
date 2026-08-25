@@ -1,23 +1,23 @@
 /* ===== VARIABLES ===== */
 :root {
-    --color-primary: #8B6914;
-    --color-primary-dark: #6B4F0F;
-    --color-primary-light: #C4A35A;
-    --color-accent: #D4A853;
-    --color-bg: #FAF8F5;
-    --color-bg-alt: #F5F0E8;
-    --color-text: #2C2416;
-    --color-text-light: #6B5D4D;
-    --color-text-muted: #9B8E7E;
+    --color-primary: #D4849A;
+    --color-primary-dark: #B85D78;
+    --color-primary-light: #E8A8B8;
+    --color-accent: #E8A8B8;
+    --color-bg: #FFF5F7;
+    --color-bg-alt: #FCE8ED;
+    --color-text: #4A2C35;
+    --color-text-light: #8B5E6B;
+    --color-text-muted: #B8909A;
     --color-white: #FFFFFF;
-    --color-border: #E8E0D4;
-    --color-success: #4A7C59;
+    --color-border: #F0D5DC;
+    --color-success: #6B9E75;
     --color-danger: #C0392B;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
-    --shadow-sm: 0 1px 3px rgba(44, 36, 22, 0.08);
-    --shadow-md: 0 4px 12px rgba(44, 36, 22, 0.1);
-    --shadow-lg: 0 8px 30px rgba(44, 36, 22, 0.12);
+    --shadow-sm: 0 1px 3px rgba(74, 44, 53, 0.08);
+    --shadow-md: 0 4px 12px rgba(74, 44, 53, 0.1);
+    --shadow-lg: 0 8px 30px rgba(74, 44, 53, 0.12);
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 20px;
@@ -111,7 +111,7 @@ img { max-width: 100%; display: block; }
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(250, 248, 245, 0.95);
+    background: rgba(255, 245, 247, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
     transition: var(--transition);
@@ -134,9 +134,10 @@ img { max-width: 100%; display: block; }
     color: var(--color-primary);
 }
 
-.logo i {
-    font-size: 22px;
-    color: var(--color-accent);
+.logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
 }
 
 .nav-links {
@@ -238,7 +239,7 @@ img { max-width: 100%; display: block; }
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 700;
     line-height: 1.15;
     color: var(--color-text);
@@ -265,30 +266,12 @@ img { max-width: 100%; display: block; }
     align-items: center;
 }
 
-.hero-img-placeholder {
+.hero-img {
     width: 420px;
     height: 520px;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, #EDE6D8 100%);
+    object-fit: cover;
     border-radius: var(--radius-lg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
     box-shadow: var(--shadow-lg);
-    border: 2px dashed var(--color-border);
-}
-
-.hero-img-placeholder i {
-    font-size: 80px;
-    color: var(--color-primary-light);
-    opacity: 0.6;
-}
-
-.hero-img-placeholder span {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    font-weight: 500;
 }
 
 /* ===== FEATURES ===== */
@@ -396,15 +379,10 @@ img { max-width: 100%; display: block; }
     overflow: hidden;
 }
 
-.product-img i {
-    font-size: 48px;
-    color: var(--color-primary-light);
-    opacity: 0.5;
-}
-
-.product-img span {
-    font-size: 13px;
-    color: var(--color-text-muted);
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-actions {
@@ -455,6 +433,7 @@ img { max-width: 100%; display: block; }
     color: var(--color-primary);
     font-weight: 600;
     margin-bottom: 6px;
+    display: block;
 }
 
 .product-name {
@@ -876,12 +855,13 @@ img { max-width: 100%; display: block; }
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
-.cart-item-img i {
-    font-size: 32px;
-    color: var(--color-primary-light);
-    opacity: 0.5;
+.cart-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .cart-item-details {
@@ -1142,7 +1122,7 @@ img { max-width: 100%; display: block; }
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
+    box-shadow: 0 0 0 3px rgba(212, 132, 154, 0.15);
 }
 
 .form-group textarea {
@@ -1234,12 +1214,13 @@ img { max-width: 100%; display: block; }
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
-.checkout-item-img i {
-    font-size: 20px;
-    color: var(--color-primary-light);
-    opacity: 0.5;
+.checkout-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .checkout-item-info h4 {
@@ -1352,31 +1333,13 @@ img { max-width: 100%; display: block; }
     justify-content: center;
 }
 
-.about-img-placeholder {
+.about-img {
     width: 100%;
     max-width: 480px;
     height: 560px;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, #EDE6D8 100%);
+    object-fit: cover;
     border-radius: var(--radius-lg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
     box-shadow: var(--shadow-lg);
-    border: 2px dashed var(--color-border);
-}
-
-.about-img-placeholder i {
-    font-size: 80px;
-    color: var(--color-primary-light);
-    opacity: 0.6;
-}
-
-.about-img-placeholder span {
-    font-size: 14px;
-    color: var(--color-text-muted);
-    font-weight: 500;
 }
 
 .about-content h2 {
@@ -1640,7 +1603,7 @@ img { max-width: 100%; display: block; }
     .hero-title { font-size: 42px; }
     .hero-buttons { justify-content: center; }
     .hero-image { order: -1; }
-    .hero-img-placeholder { width: 320px; height: 380px; }
+    .hero-img { width: 320px; height: 380px; }
 
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1694,12 +1657,12 @@ img { max-width: 100%; display: block; }
     .cart-item-actions { justify-content: center; }
 
     .about-stats { flex-direction: column; gap: 16px; }
-    .about-img-placeholder { height: 320px; }
+    .about-img { height: 320px; }
 }
 
 @media (max-width: 480px) {
     .products-grid { grid-template-columns: 1fr; }
-    .hero-img-placeholder { width: 100%; height: 280px; }
+    .hero-img { width: 100%; height: 280px; }
     .checkout-step { padding: 24px; }
     .contact-form-wrapper { padding: 24px; }
 }

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración — Shaill Velas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .admin-body { background: var(--color-bg); padding-top: 80px; }
+        .admin-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+        .admin-header h1 { font-family: var(--font-heading); font-size: 36px; margin-bottom: 8px; }
+        .admin-header p { opacity: 0.9; }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .admin-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .admin-card {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+        }
+
+        .admin-card h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admin-card h3 i { color: var(--color-primary); }
+
+        .stat-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+        }
+
+        .stat-box i {
+            width: 44px;
+            height: 44px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .stat-box div strong {
+            display: block;
+            font-size: 20px;
+            color: var(--color-text);
+        }
+
+        .stat-box div span {
+            font-size: 13px;
+            color: var(--color-text-muted);
+        }
+
+        .admin-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .admin-btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+        .admin-btn-primary:hover { background: var(--color-primary-dark); }
+
+        .admin-btn-success {
+            background: var(--color-success);
+            color: white;
+        }
+        .admin-btn-success:hover { opacity: 0.9; }
+
+        .admin-btn-warning {
+            background: #E8A838;
+            color: white;
+        }
+        .admin-btn-warning:hover { opacity: 0.9; }
+
+        .admin-btn-danger {
+            background: var(--color-danger);
+            color: white;
+        }
+        .admin-btn-danger:hover { opacity: 0.9; }
+
+        .admin-btn-outline {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+        .admin-btn-outline:hover { background: var(--color-bg-alt); }
+
+        .product-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .product-row {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            gap: 20px;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .product-row:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-row-img {
+            width: 70px;
+            height: 70px;
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-row-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-row-img i {
+            font-size: 24px;
+            color: var(--color-primary-light);
+        }
+
+        .product-row-info h4 {
+            font-family: var(--font-heading);
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+
+        .product-row-info p {
+            font-size: 13px;
+            color: var(--color-text-muted);
+        }
+
+        .product-row-price {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-align: right;
+        }
+
+        .product-row-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .product-row-actions button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .btn-edit { background: var(--color-bg-alt); color: var(--color-text); }
+        .btn-edit:hover { background: var(--color-primary); color: white; }
+
+        .btn-delete { background: #FCE8E8; color: var(--color-danger); }
+        .btn-delete:hover { background: var(--color-danger); color: white; }
+
+        /* Modal */
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        .admin-modal.active { display: flex; }
+
+        .admin-modal-content {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 640px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalIn 0.3s ease;
+        }
+
+        .admin-modal-header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-modal-header h2 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+        }
+
+        .admin-modal-header button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--color-text-muted);
+            cursor: pointer;
+        }
+
+        .admin-modal-body {
+            padding: 32px;
+        }
+
+        .admin-modal-footer {
+            padding: 20px 32px;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .image-preview {
+            width: 100%;
+            height: 180px;
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 2px dashed var(--color-border);
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-preview i {
+            font-size: 48px;
+            color: var(--color-primary-light);
+            opacity: 0.5;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: 0; top: 0;
+            opacity: 0;
+            width: 100%; height: 100%;
+            cursor: pointer;
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 15px;
+            background: var(--color-white);
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-muted);
+        }
+
+        .badge-selector {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge-option {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 2px solid var(--color-border);
+            background: var(--color-white);
+            cursor: pointer;
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .badge-option.active {
+            border-color: var(--color-primary);
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 24px;
+            color: var(--color-text-muted);
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--color-border);
+        }
+
+        @media (max-width: 768px) {
+            .admin-grid { grid-template-columns: 1fr; }
+            .admin-sidebar { position: static; }
+            .product-row { grid-template-columns: 60px 1fr; }
+            .product-row-price { grid-column: 2; text-align: left; }
+            .product-row-actions { grid-column: 1 / -1; justify-content: flex-end; }
+            .form-row-2, .form-row-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="admin-body">
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="Shaill Velas" class="logo-img">
+                <span>Shaill</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Ver Tienda</a></li>
+                <li><a href="admin.html" class="active">Admin</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-header">
+        <div class="container">
+            <h1><i class="fas fa-cog"></i> Panel de Administración</h1>
+            <p>Gestiona tus productos, precios e imágenes de Shaill Velas</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="admin-grid">
+            <!-- Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="admin-card">
+                    <h3><i class="fas fa-chart-pie"></i> Resumen</h3>
+                    <div class="stat-box">
+                        <i class="fas fa-box"></i>
+                        <div>
+                            <strong id="totalProducts">0</strong>
+                            <span>Productos</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-fire"></i>
+                        <div>
+                            <strong id="featuredProducts">0</strong>
+                            <span>Destacados</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div>
+                            <strong id="avgPrice">$0</strong>
+                            <span>Precio promedio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3><i class="fas fa-tools"></i> Acciones</h3>
+                    <button class="admin-btn admin-btn-primary" onclick="openModal()">
+                        <i class="fas fa-plus"></i> Nuevo Producto
+                    </button>
+                    <button class="admin-btn admin-btn-success" onclick="exportData()">
+                        <i class="fas fa-download"></i> Exportar Datos
+                    </button>
+                    <div class="file-input-wrapper">
+                        <button class="admin-btn admin-btn-warning">
+                            <i class="fas fa-upload"></i> Importar Datos
+                        </button>
+                        <input type="file" id="importFile" accept=".json" onchange="importData(this)">
+                    </div>
+                    <button class="admin-btn admin-btn-outline" onclick="previewStore()">
+                        <i class="fas fa-eye"></i> Ver Tienda
+                    </button>
+                    <button class="admin-btn admin-btn-danger" onclick="resetData()">
+                        <i class="fas fa-undo"></i> Restaurar Default
+                    </button>
+                </div>
+
+                <div class="admin-card">
+                    <h3><i class="fas fa-info-circle"></i> Instrucciones</h3>
+                    <p style="font-size:13px;color:var(--color-text-light);line-height:1.7">
+                        • Los cambios se guardan automáticamente en este navegador.<br><br>
+                        • Para subir una imagen nueva, selecciona el archivo. Se convertirá a base64.<br><br>
+                        • Cuando termines, clic en <strong>"Exportar Datos"</strong> para descargar el archivo y subirlo a tu repositorio de GitHub.<br><br>
+                        • Reemplaza el contenido de <code>js/main.js</code> con los datos exportados.
+                    </p>
+                </div>
+            </aside>
+
+            <!-- Main -->
+            <div class="admin-main">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar producto por nombre..." oninput="renderAdminList()">
+                </div>
+
+                <div class="product-list" id="productList">
+                    <!-- Se llena con JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto -->
+    <div class="admin-modal" id="productModal">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h2 id="modalTitle">Nuevo Producto</h2>
+                <button onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="admin-modal-body">
+                <div class="image-preview" id="imagePreview">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="file-input-wrapper" style="margin-bottom:20px">
+                    <button class="admin-btn admin-btn-outline" style="margin-bottom:0">
+                        <i class="fas fa-camera"></i> Seleccionar Imagen
+                    </button>
+                    <input type="file" id="productImage" accept="image/*" onchange="handleImageUpload(this)">
+                </div>
+                <p style="font-size:12px;color:var(--color-text-muted);margin-bottom:20px;text-align:center">
+                    O escribe la ruta manualmente: <code>images/mi-foto.jpg</code>
+                </p>
+
+                <div class="form-group">
+                    <label>Nombre del producto *</label>
+                    <input type="text" id="prodName" placeholder="Ej: Cera de Soya – Corazón">
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>Precio *</label>
+                        <input type="number" id="prodPrice" placeholder="45" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Precio anterior (opcional)</label>
+                        <input type="number" id="prodOldPrice" placeholder="60" min="0">
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>Categoría *</label>
+                        <select id="prodCategory">
+                            <option value="ceras">Cera de Soya</option>
+                            <option value="quemadores">Quemador</option>
+                            <option value="sets">Set de Regalo</option>
+                            <option value="velas">Vela</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Aroma *</label>
+                        <select id="prodAroma">
+                            <option value="vainilla">Vainilla</option>
+                            <option value="lavanda">Lavanda</option>
+                            <option value="citrico">Cítricos</option>
+                            <option value="amaderado">Amaderado</option>
+                            <option value="floral">Floral</option>
+                            <option value="varios">Varios aromas</option>
+                            <option value="sin aroma">Sin aroma</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>Tamaño / Presentación</label>
+                        <input type="text" id="prodSize" placeholder="Ej: Individual, 6 piezas, Barra">
+                    </div>
+                    <div class="form-group">
+                        <label>Duración</label>
+                        <input type="text" id="prodBurnTime" placeholder="Ej: 4-6 horas">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="prodDesc" rows="2" placeholder="Breve descripción del producto..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Ruta de imagen (si ya está en la carpeta images/)</label>
+                    <input type="text" id="prodImagePath" placeholder="images/mi-foto.jpg" oninput="updatePreviewFromPath()">
+                </div>
+
+                <div class="form-group">
+                    <label style="margin-bottom:10px;display:block">Badge / Etiqueta</label>
+                    <div class="badge-selector" id="badgeSelector">
+                        <span class="badge-option" data-value="" onclick="selectBadge(this)">Ninguno</span>
+                        <span class="badge-option" data-value="Más Vendida" onclick="selectBadge(this)">Más Vendida</span>
+                        <span class="badge-option" data-value="Nuevo" onclick="selectBadge(this)">Nuevo</span>
+                        <span class="badge-option" data-value="Pack" onclick="selectBadge(this)">Pack</span>
+                        <span class="badge-option" data-value="Combo" onclick="selectBadge(this)">Combo</span>
+                        <span class="badge-option" data-value="Ideal para Regalo" onclick="selectBadge(this)">Ideal para Regalo</span>
+                        <span class="badge-option" data-value="Edición Limitada" onclick="selectBadge(this)">Edición Limitada</span>
+                        <span class="badge-option" data-value="Más Completo" onclick="selectBadge(this)">Más Completo</span>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:20px">
+                    <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+                        <input type="checkbox" id="prodFeatured" style="width:18px;height:18px;accent-color:var(--color-primary)">
+                        <span>Mostrar en página de inicio (Destacado)</span>
+                    </label>
+                </div>
+            </div>
+            <div class="admin-modal-footer">
+                <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="saveProduct()">
+                    <i class="fas fa-save"></i> Guardar Producto
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

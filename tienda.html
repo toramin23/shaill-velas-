@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda — Lumina Velas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-fire"></i>
+                <span>Lumina</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tienda.html" class="active">Tienda</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Nuestra Tienda</h1>
+            <p>Descubre velas que transforman cualquier espacio</p>
+        </div>
+    </section>
+
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Sidebar Filters -->
+                <aside class="shop-sidebar">
+                    <div class="filter-group">
+                        <h3>Categorías</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox" class="filter-cat" value="aromaticas" checked> Aromáticas</label></li>
+                            <li><label><input type="checkbox" class="filter-cat" value="decorativas" checked> Decorativas</label></li>
+                            <li><label><input type="checkbox" class="filter-cat" value="sets" checked> Sets y Regalos</label></li>
+                        </ul>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Aromas</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox" class="filter-aroma" value="lavanda" checked> Lavanda</label></li>
+                            <li><label><input type="checkbox" class="filter-aroma" value="vainilla" checked> Vainilla</label></li>
+                            <li><label><input type="checkbox" class="filter-aroma" value="citrico" checked> Cítricos</label></li>
+                            <li><label><input type="checkbox" class="filter-aroma" value="amaderado" checked> Amaderados</label></li>
+                            <li><label><input type="checkbox" class="filter-aroma" value="floral" checked> Florales</label></li>
+                        </ul>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Precio</h3>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="1000" value="1000">
+                            <div class="price-labels">
+                                <span>$0</span>
+                                <span id="priceValue">Hasta $1000</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="shop-main">
+                    <div class="shop-toolbar">
+                        <p id="resultsCount">Mostrando todos los productos</p>
+                        <select id="sortSelect">
+                            <option value="default">Ordenar por</option>
+                            <option value="price-asc">Precio: menor a mayor</option>
+                            <option value="price-desc">Precio: mayor a menor</option>
+                            <option value="name">Nombre A-Z</option>
+                        </select>
+                    </div>
+                    <div class="products-grid" id="shopProducts">
+                        <!-- Se llena con JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><i class="fas fa-fire"></i><span>Lumina</span></a>
+                    <p>Velas artesanales hechas con amor y materiales 100% naturales.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Tienda</h4>
+                    <ul>
+                        <li><a href="tienda.html">Todos los productos</a></li>
+                        <li><a href="tienda.html?categoria=aromaticas">Aromáticas</a></li>
+                        <li><a href="tienda.html?categoria=decorativas">Decorativas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hola@luminavelas.com</li>
+                        <li><i class="fas fa-phone"></i> +52 55 1234 5678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Lumina Velas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
